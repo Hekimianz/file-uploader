@@ -1,0 +1,101 @@
+:root {
+  --dark-blue: #1b263b;
+  --grey: #e5e5e5;
+  --yellow: #fca311;
+  --light-blue: #274c77;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html {
+  font-size: 64.5%;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-blue);
+  color: #fff;
+  font-family: "Roboto", serif;
+}
+
+#form--login,
+#form--signup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#form--login span,
+#form--signup span {
+  align-self: center;
+}
+
+#form--login label,
+#form--signup label {
+  margin-bottom: -5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#form--login input,
+#form--signup input {
+  border: 1px solid var(--grey);
+  border-radius: 2px;
+  padding: 2px;
+  transition: 0.2s all ease, 0.05s outline ease;
+}
+
+#form--login input:focus,
+#form--signup input:focus {
+  outline: 1.5px solid var(--yellow);
+}
+
+#form--login button,
+#form--signup button {
+  align-self: center;
+  font-weight: 500;
+  border-radius: 2px;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  background-color: #fca311;
+  border: 1px solid var(--yellow);
+  color: var(--dark-blue);
+  transition: 0.2s all ease;
+  margin: 10px 0;
+}
+
+#form--login button:hover,
+#form--signup button:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#form--login button:active,
+#form--signup button:active {
+  transform: scale(1);
+}
+
+#form--login a,
+#form--signup a {
+  color: var(--grey);
+  transition: 0.1s all ease;
+}
+
+#form--login a:hover,
+#form--signup a:hover {
+  color: var(--yellow);
+}
