@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Hekimianz/file-uploader#readme",
   "description": "",
   "dependencies": {
+    "@prisma/client": "^6.3.0",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
