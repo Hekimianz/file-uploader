@@ -1,5 +1,6 @@
 body {
   justify-content: space-between;
+  position: relative;
 }
 
 #form--login,
@@ -70,4 +71,20 @@ body {
 #form--login a:hover,
 #form--signup a:hover {
   color: var(--yellow);
+}
+
+.error--messages {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  color: #e63946;
+  position: absolute;
+  top: 120px;
+  gap: 5px;
+}
+
+.register--errors {
+  margin-top: 30px;
+  margin-bottom: -30px;
+  position: initial;
 }

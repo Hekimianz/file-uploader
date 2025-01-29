@@ -15,8 +15,14 @@
 
 <body>
   <%- include("partials/header") %>
-
-  <form id="form--login" action="/login" method="POST">
+  <% if (locals.errors && locals.errors.length > 0) { %>
+  <ul class="error--messages">
+    <% locals.errors.forEach(error => { %>
+    <li class="error"><%= error.msg %></li>
+    <% }) %>
+  </ul>
+  <% } %>
+  <form id="form--login" action="/login" method="POST" novalidate>
     <label for="email">Email</label>
     <input type="email" id="email" name="email" />
     <label for="password">Password</label>
