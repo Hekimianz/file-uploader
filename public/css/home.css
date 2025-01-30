@@ -1,3 +1,95 @@
 body {
   justify-content: flex-start;
 }
+
+.welcome--home {
+  font-size: 1.6rem;
+  margin: 30px 0 60px 0;
+}
+
+.user--files-cont {
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  justify-items: center;
+  position: relative;
+}
+
+.folder {
+  width: 90px;
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s all ease, 0s border;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.folder img {
+  width: 80%;
+}
+
+.folder:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(252, 163, 17, 0.2) 0px 7px 29px 0px;
+  border: 1px solid var(--yellow);
+}
+
+.folder:active {
+  transform: scale(1);
+  box-shadow: rgba(252, 163, 17, 0.2) 0px 7px 20px 0px;
+  border: 1px solid var(--yellow);
+}
+
+.create_folder--btn {
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+
+.create_folder--btn img {
+  width: 100%;
+}
+
+.create_folder--btn:hover {
+  transform: scale(1.1);
+}
+
+.create_folder--btn:active {
+  transform: scale(0.9);
+}
+
+.new--folder form {
+  width: 80%;
+  align-self: center;
+}
+
+.new--folder input {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: 0.5px solid #fff;
+  border-radius: 2px;
+  padding: 2px;
+  margin-bottom: 2px;
+}
+
+.empty--msg {
+  font-size: 1.4rem;
+
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}

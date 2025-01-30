@@ -1,9 +1,7 @@
-const { PrismaClient } = require("@prisma/client");
+const prisma = require("./prisma");
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
 const passport = require("passport");
-
-const prisma = new PrismaClient();
 
 function initialize(passport) {
   passport.use(
@@ -23,6 +21,7 @@ function initialize(passport) {
           if (!match) {
             return done(null, false, { message: "Incorrect password" });
           }
+          console.log(user);
           return done(null, user);
         } catch (err) {
           return done(err);

@@ -4,7 +4,7 @@ const session = require("express-session");
 const passport = require("passport");
 const initializePassport = require("./config/passport");
 const { PrismaSessionStore } = require("@quixo3/prisma-session-store");
-const { PrismaClient } = require("@prisma/client");
+const prisma = require("./config/prisma");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -20,11 +20,12 @@ app.use(
   session({
     cookie: {
       maxAge: 24 * 60 * 60 * 1000,
+      httpOnly: true,
     },
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
-    store: new PrismaSessionStore(new PrismaClient(), {
+    store: new PrismaSessionStore(prisma, {
       checkPeriod: 2 * 60 * 1000,
       dbRecordIdIsSessionId: true,
       dbRecordIdFunction: undefined,

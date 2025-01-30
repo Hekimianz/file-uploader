@@ -1,7 +1,6 @@
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient();
+const prisma = require("../config/prisma");
 
 const validateRegister = [
   body("email")
@@ -36,6 +35,8 @@ const validateRegister = [
     .escape(),
 ];
 
+exports.render = (req, res) => res.render("signup");
+
 exports.register = [
   ...validateRegister,
   async (req, res) => {
@@ -56,11 +57,15 @@ exports.register = [
     const hashedPassword = await bcrypt.hash(password, 10);
 
     try {
+      const nameFormatted = name
+        .split(" ")
+        .map((word) => word[0].toUpperCase() + word.slice(1))
+        .join(" ");
       const newUser = await prisma.user.create({
         data: {
           email: email,
           password: hashedPassword,
-          name: name,
+          name: nameFormatted,
         },
       });
 
