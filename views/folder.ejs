@@ -10,24 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="/css/home.css" />
-  <script src="scripts/homeScripts.js" defer></script>
+  <link rel="stylesheet" href="/css/folder.css" />
+  <script src="/scripts/folderScripts.js" defer></script>
 </head>
 
 <body>
   <%- include("partials/header") %>
-  <h2 class="welcome--home">Hello <%= user.name%>!</h2>
-  <section class="user--files-cont">
-    <% if(user.folders.length > 0){%>
-    <% user.folders.forEach(folder => {%>
-    <%- include("partials/folder", {folder: folder}) %>
-    <% })%>
-    <% } else {%>
-    <p class="empty--msg">You have no folders!</p>
-    <% } %>
-    <%- include("partials/addFolder") %>
-  </section>
-  <button class="create_folder--btn"><img src="/images/add_folder.png" alt="create folder"></button>
+  <h1><%= folder.name%></h1>
+  <%- include("partials/addFile") %>
+  <button class="upload_file--btn"><img src="/images/file.png" alt="upload file"></button>
   <%- include("partials/footer") %>
 </body>
 

@@ -1,0 +1,79 @@
+h1 {
+  font-size: 1.6rem;
+  margin: 30px 0 60px 0;
+}
+
+.upload_file--btn {
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+
+.upload_file--btn img {
+  width: 100%;
+}
+
+.upload_file--btn:hover {
+  transform: scale(1.1);
+}
+
+.upload_file--btn:active {
+  transform: scale(0.9);
+}
+
+.new_file--cont {
+  background-color: rgba(254, 165, 17, 0.2);
+  padding: 2rem;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.new_file--cont form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new_file--cont form input {
+  width: 200px;
+}
+
+.new_file--cont form button {
+  margin-top: 20px;
+  padding: 0.5rem;
+  background-color: var(--light-blue);
+  border: 1px solid var(--yellow);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+
+.new_file--cont form button:hover {
+  background-color: var(--yellow);
+  color: var(--light-blue);
+  border: 1px solid var(--light-blue);
+  transform: scale(1.1);
+}
+
+.close--form {
+  position: absolute;
+  width: 25px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+
+.close--form:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}

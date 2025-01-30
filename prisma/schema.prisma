@@ -43,10 +43,8 @@ model Folder {
 model File {
   id        String   @id @default(uuid())
   name      String
-  path      String
-  size      Int
+  url       String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
   folderId  String
   userId    String
 

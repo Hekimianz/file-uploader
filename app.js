@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 const homeRouter = require("./routes/homeRoute");
 const loginRouter = require("./routes/loginRoute");
 const registerRouter = require("./routes/registerRoute");
+const folderRouter = require("./routes/folderRoute");
 
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
@@ -38,6 +39,7 @@ app.use(passport.session());
 initializePassport(passport);
 app.use("/sign-up", registerRouter);
 app.use("/login", loginRouter);
+app.use("/folder", folderRouter);
 app.use("/", homeRouter);
 
 app.listen(PORT, () => console.log(`Server is up at port ${PORT}`));
