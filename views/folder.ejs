@@ -17,6 +17,11 @@
 <body>
   <%- include("partials/header") %>
   <h1><%= folder.name%></h1>
+  <div class="user--files-cont ">
+    <% locals.files.forEach(file => {%>
+    <%- include("partials/file", {file: file}) %>
+    <% });%>
+  </div>
   <%- include("partials/addFile") %>
   <button class="upload_file--btn"><img src="/images/file.png" alt="upload file"></button>
   <%- include("partials/footer") %>

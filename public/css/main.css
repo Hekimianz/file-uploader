@@ -43,11 +43,18 @@ a {
   color: inherit;
 }
 
-header {
+header a {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   padding: 2rem;
   background-color: var(--light-blue);
   width: 100%;

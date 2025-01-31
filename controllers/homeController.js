@@ -15,7 +15,6 @@ exports.getFolders = async (req, res, next) => {
         where: { userId: req.user.id },
       });
       req.user.folders = folders;
-      console.log(req.user);
     }
     next();
   } catch (err) {
@@ -33,7 +32,6 @@ exports.addFolder = async (req, res) => {
       },
     });
     res.redirect("/");
-    console.log(newFolder);
   } catch (err) {
     console.error("error creating new folder", err);
   }
