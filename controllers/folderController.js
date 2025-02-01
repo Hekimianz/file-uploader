@@ -31,7 +31,6 @@ exports.getFolderFiles = async (req, res, next) => {
 
 exports.renderFolder = async (req, res) => {
   try {
-    console.log(req.files);
     res.render("folder", { folder: req.folder, files: req.files });
   } catch (err) {
     console.error("Error rendering folder", err);

@@ -1,0 +1,52 @@
+.file--card {
+  width: 80%;
+  background-color: var(--light-blue);
+  margin-top: auto;
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+h2 {
+  text-align: center;
+}
+
+.file--icon {
+  width: 80%;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.file--card p {
+  margin-top: 10px;
+}
+
+.icon {
+  position: absolute;
+  width: 20px;
+  bottom: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.2s all ease;
+}
+
+.icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.delete--icon {
+  left: 5px;
+}
+
+.share--icon {
+  right: 5px;
+}
+
+.bold {
+  font-weight: 600;
+}

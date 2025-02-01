@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+  <title>File Uploader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/file.css" />
+  <script src="/scripts/fileScripts.js" defer></script>
+</head>
+
+<body>
+  <%- include("partials/header") %>
+  <div class="file--card">
+    <img class="file--icon" src="<%=locals.file.url%>" alt="file icon">
+    <h2><%= locals.file.name %></h2>
+    <p><span class="bold">Uploaded by:</span> <%= locals.file.user %></p>
+    <p><span class="bold">Date uploaded:</span> <%= locals.file.dateFormatted%></p>
+    <img src="/images/delete.png" alt="delete file" class="icon delete--icon">
+    <img src="/images/share.png" alt="share file" class="icon share--icon">
+
+  </div>
+  <%- include("partials/footer") %>
+</body>
+
+</html>
