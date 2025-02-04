@@ -56,6 +56,7 @@ exports.uploadFile = async (req, res) => {
         url: result.secure_url,
         folderId: req.params.id,
         userId: req.user.id,
+        cloudinary_id: result.public_id,
       },
     });
 

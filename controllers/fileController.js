@@ -1,5 +1,6 @@
 const prisma = require("../config/prisma");
 const { format } = require("date-fns");
+const cloudinary = require("../config/cloudinary");
 
 exports.getFile = async (req, res, next) => {
   try {
@@ -28,5 +29,19 @@ exports.renderFile = async (req, res) => {
     res.render("file", { file: req.file });
   } catch (err) {
     console.error("Error rendering file", err);
+  }
+};
+
+exports.deleteFile = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const file = await prisma.file.delete({
+      where: { id: id },
+    });
+    console.log(file);
+    const result = await cloudinary.uploader.destroy(file.cloudinary_id);
+    res.redirect("/");
+  } catch (err) {
+    console.error("Error deleting file", err);
   }
 };

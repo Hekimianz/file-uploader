@@ -21,7 +21,14 @@
     <h2><%= locals.file.name %></h2>
     <p><span class="bold">Uploaded by:</span> <%= locals.file.user %></p>
     <p><span class="bold">Date uploaded:</span> <%= locals.file.dateFormatted%></p>
-    <img src="/images/delete.png" alt="delete file" class="icon delete--icon">
+    <button><img src="/images/delete.png" alt="delete file" class="icon delete--icon"></button>
+    <div class="deleteConfirmation--cont hidden">
+      <h3>Are you sure you want to delete this file?</h3>
+      <div class="deleteConfirmationBtns--cont ">
+        <button id="no">No</button>
+        <a href="<%=`/file/delete/${locals.file.id}`%>"><button id="yes">Yes</button></a>
+      </div>
+    </div>
     <img src="/images/share.png" alt="share file" class="icon share--icon">
 
   </div>

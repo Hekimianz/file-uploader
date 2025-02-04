@@ -1,3 +1,14 @@
+const deleteIcon = document.querySelector(".delete--icon");
+const deleteCont = document.querySelector(".deleteConfirmation--cont");
+const noBtn = document.querySelector("#no");
+
+noBtn.addEventListener("click", () => {
+  deleteCont.classList.add("hidden");
+});
+
+deleteIcon.addEventListener("click", () => {
+  deleteCont.classList.remove("hidden");
+});
 const filename = document.querySelectorAll("h2")[1].innerText;
 const documentTypes = [
   ".txt",
@@ -56,7 +67,7 @@ const fontTypes = [".ttf", ".otf", ".woff", ".woff2"];
 function getFileExtensions(filename) {
   const extension = filename.split(".").pop().toLowerCase();
   const icon = document.querySelector(".file--icon");
-  console.log(extension);
+
   if (imageTypes.includes("." + extension)) {
     return;
   } else if (documentTypes.includes("." + extension)) {

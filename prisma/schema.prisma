@@ -41,13 +41,13 @@ model Folder {
 }
 
 model File {
-  id        String   @id @default(uuid())
-  name      String
-  url       String
-  createdAt DateTime @default(now())
-  folderId  String
-  userId    String
-
-  folder Folder @relation(fields: [folderId], references: [id])
-  User   User   @relation(fields: [userId], references: [id])
+  id            String   @id @default(uuid())
+  name          String
+  url           String
+  createdAt     DateTime @default(now())
+  folderId      String
+  userId        String
+  cloudinary_id String
+  folder        Folder   @relation(fields: [folderId], references: [id])
+  User          User     @relation(fields: [userId], references: [id])
 }
