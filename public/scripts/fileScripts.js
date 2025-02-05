@@ -1,13 +1,34 @@
 const deleteIcon = document.querySelector(".delete--icon");
+const shareIcon = document.querySelector(".share--icon");
+const shareCont = document.querySelector(".shareFile--cont");
 const deleteCont = document.querySelector(".deleteConfirmation--cont");
+const closeShareBtn = document.querySelector(".closeShare");
 const noBtn = document.querySelector("#no");
+const link = document.querySelector(".share--link");
 
 noBtn.addEventListener("click", () => {
   deleteCont.classList.add("hidden");
+  shareIcon.classList.remove("hidden");
 });
 
 deleteIcon.addEventListener("click", () => {
   deleteCont.classList.remove("hidden");
+  shareIcon.classList.add("hidden");
+});
+
+closeShareBtn.addEventListener("click", () => {
+  shareCont.classList.add("hidden");
+  shareIcon.classList.remove("hidden");
+});
+
+shareIcon.addEventListener("click", () => {
+  shareCont.classList.remove("hidden");
+  shareIcon.classList.add("hidden");
+});
+
+link.addEventListener("click", () => {
+  const text = link.innerText;
+  navigator.clipboard.writeText(text);
 });
 const filename = document.querySelectorAll("h2")[1].innerText;
 const documentTypes = [

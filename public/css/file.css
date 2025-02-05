@@ -97,6 +97,65 @@ h2 {
   border: 1px solid var(--yellow);
 }
 
+.shareFile--cont {
+  position: absolute;
+  top: 30%;
+  background-color: #1b263bf7;
+  padding: 3rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.share--link i {
+  margin-left: 10px;
+  transition: 0.2s all ease;
+}
+
+.closeShare {
+  position: absolute;
+  width: 20px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.2s all ease;
+}
+.closeShare:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.share--link {
+  background-color: #fff;
+  color: var(--dark-blue);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s all ease;
+  max-width: 100%;
+}
+
+.share--link:hover {
+  transform: scale(1.1);
+}
+
+.share--link:hover i {
+  color: var(--yellow);
+}
+
+.share--link:active i {
+  color: var(--dark-blue);
+}
+.share--link:active {
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+}
 .hidden {
   display: none;
 }
