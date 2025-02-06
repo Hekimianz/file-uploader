@@ -1,5 +1,6 @@
 .file--card {
   width: 80%;
+  max-width: 700px;
   background-color: var(--light-blue);
   margin-top: auto;
   padding: 2rem;

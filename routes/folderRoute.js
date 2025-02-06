@@ -4,6 +4,7 @@ const upload = require("../config/multer");
 const folderController = require("../controllers/folderController");
 const { ensureAuthenticated } = require("../middlewares/auth");
 
+router.get("/delete/:id", folderController.deleteFiles);
 router.get(
   "/:id/:name",
   ensureAuthenticated,

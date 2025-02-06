@@ -82,3 +82,21 @@ footer a {
 footer a:hover {
   font-size: 1.1rem;
 }
+
+@media (min-width: 768px) {
+  html {
+    font-size: 74.5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 84.5%;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 100%;
+  }
+}

@@ -3,6 +3,17 @@ const form = document.querySelector(".new_file--cont");
 const openFormBtn = document.querySelector(".upload_file--btn");
 const input = document.querySelector("input");
 const files = document.querySelectorAll(".file");
+const delFolderBtn = document.querySelector(".delete_folder--btn");
+const delFolderCont = document.querySelector(".deleteConfirmation--cont");
+const noBtn = document.querySelector("#no");
+
+delFolderBtn.addEventListener("click", () => {
+  delFolderCont.classList.remove("hidden");
+});
+
+noBtn.addEventListener("click", () => {
+  delFolderCont.classList.add("hidden");
+});
 const documentTypes = [
   ".txt",
   ".csv",

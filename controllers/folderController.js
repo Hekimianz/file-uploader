@@ -74,3 +74,37 @@ exports.uploadFile = async (req, res) => {
     res.status(500).redirect(`/folder/${req.params.id}/${req.params.name}`);
   }
 };
+
+async function deleteFile(file) {
+  try {
+    const resourceType = file.url.includes("/raw/") ? "raw" : "auto";
+    await cloudinary.uploader.destroy(file.cloudinary_id, {
+      resource_type: resourceType,
+    });
+    return true;
+  } catch (err) {
+    console.error("Error deleting file from Cloudinary:", err);
+    return false;
+  }
+}
+
+exports.deleteFiles = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const files = await prisma.file.findMany({
+      where: { folderId: id },
+    });
+
+    for (const file of files) {
+      await prisma.file.delete({ where: { id: file.id } });
+      await deleteFile(file);
+    }
+
+    await prisma.folder.delete({ where: { id: id } });
+
+    res.redirect("/");
+  } catch (err) {
+    console.error("Error deleting folder", err);
+    res.redirect("/");
+  }
+};

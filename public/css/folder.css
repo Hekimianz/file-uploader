@@ -1,9 +1,73 @@
+footer {
+  bottom: 0;
+}
+
+body {
+  justify-content: flex-start;
+}
+
 h1 {
   font-size: 1.6rem;
   margin: 30px 0 60px 0;
 }
 
-.upload_file--btn {
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.deleteConfirmation--cont {
+  position: absolute;
+  top: 50%;
+  background-color: #1b263bf1;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.6rem;
+  text-align: center;
+  width: 80%;
+  max-width: 300px;
+}
+
+.deleteConfirmationBtns--cont {
+  display: flex;
+  gap: 20px;
+}
+
+.deleteConfirmationBtns--cont button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+
+.deleteConfirmationBtns--cont button:hover {
+  transform: scale(1.1);
+}
+
+#yes:hover {
+  background-color: #c62631;
+}
+
+#no {
+  background-color: var(--grey);
+  border: 1px solid var(--light-blue);
+}
+
+#yes {
+  background-color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+
+.upload_file--btn,
+.delete_folder--btn {
   background-color: transparent;
   border: none;
   width: 30px;
@@ -13,15 +77,22 @@ h1 {
   margin: 30px 0;
 }
 
-.upload_file--btn img {
-  width: 100%;
+.upload_file--btn img,
+.delete_folder--btn img {
+  height: 100%;
 }
 
-.upload_file--btn:hover {
+.delete_folder--btn img {
+  height: 110%;
+}
+
+.upload_file--btn:hover,
+.delete_folder--btn:hover {
   transform: scale(1.1);
 }
 
-.upload_file--btn:active {
+.upload_file--btn:active,
+.delete_folder--btn:active {
   transform: scale(0.9);
 }
 
@@ -121,10 +192,35 @@ h1 {
 
 .user--files-cont {
   width: 100%;
+  max-width: 600px;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   justify-items: center;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .file {
+    width: 120px;
+    height: 150px;
+    font-size: 1.2rem;
+  }
+
+  .btns * {
+    width: 40px;
+    height: 40px;
+  }
+
+  .user--files-cont {
+    gap: 30px;
+  }
+
+  .deleteConfirmation--cont {
+    top: 200px;
+  }
 }

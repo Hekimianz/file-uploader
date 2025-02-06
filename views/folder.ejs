@@ -16,14 +16,25 @@
 
 <body>
   <%- include("partials/header") %>
-  <h1><%= folder.name%></h1>
+  <h1><%= locals.folder.name%></h1>
   <div class="user--files-cont ">
     <% locals.files.forEach(file => {%>
     <%- include("partials/file", {file: file}) %>
     <% });%>
   </div>
   <%- include("partials/addFile") %>
-  <button class="upload_file--btn"><img src="/images/file.png" alt="upload file"></button>
+  <div class="btns">
+    <button class="upload_file--btn"><img src="/images/file.png" alt="upload file"></button>
+    <button class="delete_folder--btn"><img src="/images/delFolder.png" alt="delete folder"></button>
+  </div>
+  <div class="deleteConfirmation--cont hidden">
+    <h3>Are you sure you want to delete this folder and all the files within it?</h3>
+    <div class="deleteConfirmationBtns--cont">
+      <button id="no">No</button>
+      <a href="<%=`/folder/delete/${locals.folder.id}`%>"><button id="yes">Yes</button></a>
+    </div>
+  </div>
+
   <%- include("partials/footer") %>
 </body>
 
